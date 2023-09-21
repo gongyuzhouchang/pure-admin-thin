@@ -48,7 +48,10 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
     plugins: getPluginsList(command, VITE_CDN, VITE_COMPRESSION),
     // https://cn.vitejs.dev/config/dep-optimization-options.html#dep-optimization-options
     optimizeDeps: {
-      include,
+      include: [
+        "vue-table/lib/locale/lang/zh-CN",
+        "vue-table/lib/locale/lang/en-US"
+      ],
       exclude
     },
     build: {

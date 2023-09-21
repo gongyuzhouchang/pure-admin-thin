@@ -8,7 +8,7 @@ export default {
   redirect: "/welcome",
   meta: {
     icon: "homeFilled",
-    title: "首页",
+    title: "概念管理",
     rank: 0
   },
   children: [
@@ -17,7 +17,7 @@ export default {
       name: "Welcome",
       component: () => import("@/views/welcome/index.vue"),
       meta: {
-        title: "首页",
+        title: "概念列表",
         showLink: VITE_HIDE_HOME === "true" ? false : true
       }
     }

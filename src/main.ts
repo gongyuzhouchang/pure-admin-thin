@@ -6,6 +6,7 @@ import { getServerConfig } from "./config";
 import { createApp, Directive } from "vue";
 import { MotionPlugin } from "@vueuse/motion";
 // import { useEcharts } from "@/plugins/echarts";
+import Table from "@pureadmin/table";
 import { injectResponsiveStorage } from "@/utils/responsive";
 
 // import Table from "@pureadmin/table";
@@ -49,9 +50,8 @@ getServerConfig(app).then(async config => {
   await router.isReady();
   injectResponsiveStorage(app, config);
   setupStore(app);
-  app.use(MotionPlugin).use(ElementPlus);
+  app.use(MotionPlugin).use(ElementPlus).use(Table);
   // .use(useEcharts);
-  // .use(Table);
   // .use(PureDescriptions);
   app.mount("#app");
 });
